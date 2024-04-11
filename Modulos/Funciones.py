@@ -24,7 +24,19 @@ def find_goleador (players_stats):
     Args:
         players_stats: parametro de tipo lista, la cual contiene diccionarios. Debe contener la clave goals.
     Returns: 
-        dict:un unico elemento de tipo diccionario que representa al goleador
+        goleador:un unico elemento de tipo diccionario que representa al goleador
     """
     goleador=max(players_stats, key=lambda x: x['goals'])
     return goleador
+
+def most_influential(players_stats):
+    """ Encuentra al jugador más influyente, multiplicando sus estadisticas utilizando una tabla de valores dada. 
+
+    Args:
+        player_stats: parametro de tipo lista, la cual contiene diccionarios. Debe contener la clave goals, goals_avoided y assist
+
+    Returns: 
+        player: un unico elemento de tipo diccionario que representa al jugador más influyente.
+    """
+    player= max(players_stats, key=lambda x: x["goals"]*1.5 + x["goals_avoided"]*1.25 + x["assist"])
+    return player
