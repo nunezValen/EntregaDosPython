@@ -40,3 +40,15 @@ def most_influential(players_stats):
     """
     player= max(players_stats, key=lambda x: x["goals"]*1.5 + x["goals_avoided"]*1.25 + x["assist"])
     return player
+
+def get_promedio(players_stats):
+    """ Calcula el promedio de los goles del equipo.
+
+    Args:
+        player_stats: parametro de tipo lista, la cual contiene diccionarios. Debe contener la clave goals.
+    
+    Returns:
+        total_goals/25: Devuelve un elemento de tipo float.
+    """
+    total_goals= sum(player["goals"] for player in players_stats)
+    return total_goals/25
