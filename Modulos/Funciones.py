@@ -52,3 +52,13 @@ def get_promedio(players_stats):
     """
     total_goals= sum(player["goals"] for player in players_stats)
     return total_goals/25
+
+def get_promedio_goleador(goals):
+    """ Calcula el promedio de los goles del equipo.
+    Args:
+        goals: parametro de tipo integer
+    
+    Returns:
+        total_goals/25: Devuelve un elemento de tipo float.
+    """
+    return goals/25
